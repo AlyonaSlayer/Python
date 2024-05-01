@@ -1,6 +1,6 @@
 def square():
-    a = input("Введите сторону квадрата")
-    x = round(a,1)
+    a = float(input("Введите сторону квадрата"))
+    x = round(a)
     if x > a:
         y = x*x
         print(y)
@@ -10,7 +10,7 @@ def square():
         print(y)
     elif x == a:
         y = x*x
-        print(y)
+        print("Площадь квадрата = ",y)
     
 
-square() 
+square()
