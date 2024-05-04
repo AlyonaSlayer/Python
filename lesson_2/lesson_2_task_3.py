@@ -1,16 +1,8 @@
-def square():
-    a = float(input("Введите сторону квадрата"))
-    x = round(a)
-    if x > a:
-        y = x*x
-        print(y)
-    elif x < a:
-        x = x+1
-        y = x*x
-        print(y)
-    elif x == a:
-        y = x*x
-        print("Площадь квадрата = ",y)
-    
+import math
+def square(square_side):
+    square_area = square_side*square_side
+    square_area = math.ceil(square_area)
+    print("Площадь квадрата = ",square_area)  
 
-square()
+square_side = float(input("Введите сторону квадрата "))
+square(square_side)
