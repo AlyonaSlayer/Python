@@ -13,6 +13,7 @@ def task():
         sleep(2)
     driver.quit()
     print("finish")
+
 task()
 
 from selenium import webdriver
