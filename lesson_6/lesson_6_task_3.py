@@ -14,4 +14,5 @@ waiter.until(
 )
 src = driver.find_element(By.CSS_SELECTOR, "img#award").get_attribute("src")
 print(src)
+
 driver.quit()

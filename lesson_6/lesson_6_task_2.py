@@ -10,4 +10,5 @@ driver.find_element(By.CSS_SELECTOR, "#newButtonName").send_keys("SkyPro")
 driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
 text = driver.find_element(By.CSS_SELECTOR, "#updatingButton").text
 print(text)
+
 driver.quit()
