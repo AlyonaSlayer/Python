@@ -9,8 +9,9 @@ from time import sleep
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 
-def test_positive_1():
+def test_1():
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+    driver.maximize_window()
     driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]').send_keys("Иван")
     driver.find_element(By.CSS_SELECTOR, 'input[name="last-name"]').send_keys("Петров")
     driver.find_element(By.CSS_SELECTOR, 'input[name="address"]').send_keys("Ленина, 55-3")
@@ -22,7 +23,19 @@ def test_positive_1():
     driver.find_element(By.CSS_SELECTOR, 'input[name="job-position"]').send_keys("QA")
     driver.find_element(By.CSS_SELECTOR, 'input[name="company"]').send_keys("SkyPro")
     sleep(2)
-    WebDriverWait(driver, 40, 0.1).until(EC.element_to_be_clickable((By.TAG_NAME, "div button"))).click()
-    assert "danger" in driver.find_element(By.ID, "zip-code").get_attribute("class")
+    WebDriverWait(driver, 40).until(
+        EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
+    sleep(2)
+
+    assert "alert-danger" in driver.find_element(By.ID, "zip-code").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "first-name").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "last-name").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "address").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "city").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "country").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "e-mail").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "phone").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "job-position").get_attribute("class")
+    assert "alert-success" in driver.find_element(By.ID, "company").get_attribute("class")
+
     driver.quit()
-test_positive_1()
