@@ -11,4 +11,5 @@ driver.find_element(By.CSS_SELECTOR, "#ajaxButton").click()
 content = driver.find_element(By.CSS_SELECTOR, "#content")
 text = content.find_element(By.CSS_SELECTOR, "p.bg-success").text
 print(text)
+
 driver.quit()
