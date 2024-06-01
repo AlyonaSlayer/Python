@@ -9,7 +9,7 @@ class MainPage:
         self._driver.implicitly_wait(4)
         self._driver.maximize_window()
 
-    def fill_deley(self):
+    def fill_deley(self, sec):
         deley = self._driver.find_element(By.CSS_SELECTOR, "#delay")
         deley.clear()
         deley.send_keys("45")
@@ -22,5 +22,5 @@ class MainPage:
     
     def get_total(self):
         WebDriverWait(self._driver, 46).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15"))
-        result_text = self._driver.find_element(By.CSS_SELECTOR, "div.screen").text
-        return result_text
+        return self._driver.find_element(By.CSS_SELECTOR, "div.screen").text
+    
