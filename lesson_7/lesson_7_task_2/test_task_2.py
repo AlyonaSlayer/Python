@@ -7,5 +7,6 @@ def test_task_2():
     driver_chrom = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     main_page = MainPage(driver_chrom)
     main_page.fill_deley("45")
-    main_page.fill_the_form()
+    main_page.fill_the_form('C7+8=')
     assert "15" in main_page.get_total()
+
