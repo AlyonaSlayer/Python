@@ -54,7 +54,7 @@ def test_get_employee_list_missing_company_id():
     
 def test_get_employee_list_invalid_company_id():
     try:
-        emp.get_employee_list()
+        emp.get_employee_list("")
     except TypeError as a:
         assert str(a) == "EmployeeAPI.get_employee_list() missing 1 required positional argument: 'id'"
 
