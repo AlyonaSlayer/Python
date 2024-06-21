@@ -38,7 +38,7 @@ def test_add_new_employee():
 
     new_employee = emp.create_new_employee(id, name, surname, midname, email, url, phone)
     assert new_employee is not None
-    assert str(new_employee).isdigit() 
+    assert str(new_employee['id']).isdigit() 
 
 def test_get_employee_list():
     company_id = api.get_active_company_id()
